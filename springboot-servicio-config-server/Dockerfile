@@ -3,6 +3,7 @@ VOLUME /tmp
 EXPOSE 8888
 ADD ./target/springboot-servicio-config-server-0.0.1-SNAPSHOT.jar config-server.jar
 ENTRYPOINT ["java", "-jar", "config-server.jar"]
+#ENTRYPOINT ["java", "-jar", "config-server.jar", "-Dspring.cloud.config.server.git.uri=https://github.com/gabicasas/props-generic-crawler.git" , "-Dspring.cloud.config.label=main"]
 #crear docker build config-server:v1 .
 #
 
