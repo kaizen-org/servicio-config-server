@@ -43,18 +43,18 @@ jobs:
          run:  docker build -t servicio-config-server:latest ./springboot-servicio-config-server/.
        
        - name: Tag image
-         run: docker tag servicio-config-server:latest gabicasas/servicio-config-server:${{env.RELEASE_VERSION}}   
+         run: docker tag servicio-config-server:latest registry.heroku.com/config-server-kaizen/web   
        
-       - name: View images
-         run: docker images
+       #- name: View images
+       #  run: docker images
       
-       - name: Publish Docker image
-         run: docker push gabicasas/servicio-config-server:${{env.RELEASE_VERSION}}
+       #- name: Publish Docker image
+       #  run: docker push gabicasas/servicio-config-server:${{env.RELEASE_VERSION}}
        
        - name: Login to heroku
          run: docker login --username=_ --password=${{ secrets.HEROKU_AUTH_TOKEN }} registry.heroku.com
        
        - name: Publish to heroku
-         run: docker push gabicasas/adminkaizen:${{env.RELEASE_VERSION}}
+         run: docker push registry.heroku.com/config-server-kaizen/web
 
      
