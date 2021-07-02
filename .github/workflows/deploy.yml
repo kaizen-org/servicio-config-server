@@ -50,6 +50,6 @@ jobs:
           # Your Heroku App Name
            app_name: config-server-kaizen
           # Dokerfile path
-           dockerfile_path: ./springboot-servicio-config-server/Dockerfile
+           dockerfile_path: ./springboot-servicio-config-server
           # Optional build parameters
           #options: # optional    
