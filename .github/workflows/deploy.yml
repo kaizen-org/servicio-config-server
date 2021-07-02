@@ -42,14 +42,14 @@ jobs:
          uses: lucassarcanjo/heroku-deploy@2.1.17
          with:
           # Email Linked to your Heroku Account
-           email: aaaaa
+           email: ${{secrets.HEROKU_EMAIL}}
           # Heroku Dyno Formation # optional, default is web
            formation: web
           # Your Heroku API Key
-           api_key: asdfvasvafv
+           api_key: ${{ secrets.HEROKU_AUTH_TOKEN }} 
           # Your Heroku App Name
-           app_name: dvzsvdfas
+           app_name: config-server-kaizen
           # Dokerfile path
-           dockerfile_path: 
+           dockerfile_path: ./springboot-servicio-config-server/Dockerfile
           # Optional build parameters
           #options: # optional    
