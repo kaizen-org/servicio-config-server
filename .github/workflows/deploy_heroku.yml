@@ -25,10 +25,8 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Change directory
-        run: cd springboot-servicio-config-server      
       - name: Build with Maven
-        run: mvn package
+        run: mvn package -f ./springboot-servicio-config-server/pom.xml
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
