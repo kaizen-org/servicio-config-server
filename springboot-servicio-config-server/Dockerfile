@@ -1,6 +1,6 @@
 FROM openjdk:11
 VOLUME /tmp
-EXPOSE 8888
+EXPOSE 80
 ADD ./target/springboot-servicio-config-server-0.0.1-SNAPSHOT.jar config-server.jar
 ENV USER=gabicasas
 ENV PASS=TBD
