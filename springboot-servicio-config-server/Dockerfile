@@ -6,7 +6,7 @@ ENV USER=gabicasas
 ENV PASS=TBD
 ENV CONFIG_REPO=https://github.com/gabicasas/props-generic-crawler.git
 ENV CODE_REPO=https://github.com/kaizen-org/crawler_test.git
-ENTRYPOINT ["java", "-jar", "config-server.jar"]
+ENTRYPOINT ["java", "-jar", "config-server.jar" , "-Dserver.port=$PORT"]
 #ENTRYPOINT ["java", "-jar", "config-server.jar", "-Dspring.cloud.config.server.git.uri=https://github.com/gabicasas/props-generic-crawler.git" , "-Dspring.cloud.config.label=main"]
 #crear docker build config-server:v1 .
 #
