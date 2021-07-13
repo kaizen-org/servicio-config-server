@@ -3,6 +3,7 @@ VOLUME /tmp
 EXPOSE 8080:8080
 ADD ./target/springboot-servicio-config-server-0.0.1-SNAPSHOT.jar config-server.jar
 ENV USER=gabicasas
+ENV PORT=$PORT
 ENV PASS=TBD
 ENV CONFIG_REPO=https://github.com/gabicasas/props-generic-crawler.git
 ENV CODE_REPO=https://github.com/kaizen-org/crawler_test.git
