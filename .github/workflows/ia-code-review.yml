@@ -1,0 +1,33 @@
+name: AI Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+  pull_request_review_comment:
+    types: [created, edited]
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  ai-code-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run AI Code Review
+        uses: galihlprakoso/llm-ai-code-reviewer-action@v1.1.1
+        with:
+          ai_provider: 'GROQ'
+          ai_provider_model: 'llama-3.1-70b-versatile'
+          codebase_high_overview_descripton:
+            'This repository is an LLM Code Reviewer Github Action that use
+            typescript implemented with functional programming.'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   #       GOOGLE_GEMINI_API_KEY: <your gemini api key>
+          GROQ_API_KEY: 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
+   #       TAVILY_API_KEY: <your tavily api key>
