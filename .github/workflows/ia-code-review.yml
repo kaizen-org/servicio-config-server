@@ -31,4 +31,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
    #       GOOGLE_GEMINI_API_KEY: <your gemini api key>
           GROQ_API_KEY: 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
-   #       TAVILY_API_KEY: <your tavily api key>
+          TAVILY_API_KEY: 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
