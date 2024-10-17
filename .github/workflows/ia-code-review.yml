@@ -9,6 +9,7 @@ on:
     types: [created, edited]
     branches:
       - main
+      - master
 
 permissions:
   contents: write
